@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --animate-attention: attention 2s ease-in-out infinite;
+
+  @keyframes attention {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+}
