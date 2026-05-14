@@ -14,7 +14,7 @@ function doPost(e) {
 
     // Nếu Sheet trống, tạo tiêu đề có cột STT
     if (sheet.getLastRow() === 0) {
-      const headers = ["STT", "Thời gian", "Họ và tên", "Số điện thoại", "Địa chỉ", "Gói liệu trình", "Ghi chú"];
+      const headers = ["STT", "Thời gian", "Họ và tên", "Số điện thoại", "Địa chỉ", "Gói liệu trình", "Ghi chú", "Nguồn đơn hàng"];
       sheet.getRange(1, 1, 1, headers.length)
            .setValues([headers])
            .setFontWeight("bold")
@@ -25,16 +25,17 @@ function doPost(e) {
     }
 
     const lastRow = sheet.getLastRow();
-    const stt = lastRow; // Vì dòng 1 là tiêu đề, nên số dòng hiện tại chính là STT của đơn hàng mới
+    const stt = lastRow; 
 
     const rowData = [
-      stt, // Cột STT
+      stt, 
       new Date(),
       e.parameter.name || "",
       "'" + (e.parameter.phone || ""),
       e.parameter.address || "",
       e.parameter.package || "",
-      e.parameter.note || ""
+      e.parameter.note || "",
+      e.parameter.sourceUrl || "" // Lưu link web chạy đơn hàng
     ];
 
     sheet.appendRow(rowData);

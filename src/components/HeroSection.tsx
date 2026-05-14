@@ -44,7 +44,7 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
                     Xem ưu đãi <ArrowRight className="w-5 h-5" />
                   </button>
                   <a
-                    href="tel:0999999999"
+                    href={`tel:${import.meta.env.VITE_CONTACT_PHONE}`}
                     className="bg-white/90 hover:bg-white text-[#283618] px-6 py-3 rounded-tl-2xl rounded-br-2xl font-black uppercase tracking-wider text-sm sm:text-base transition-transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2 whitespace-nowrap"
                   >
                     <Phone className="w-5 h-5" /> Tư vấn miễn phí

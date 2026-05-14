@@ -38,6 +38,7 @@ export default function OrderSection({ selectedPackage, setSelectedPackage }: Or
     const data = {
       ...formData,
       package: packages.find(p => p.id === selectedPackage)?.name,
+      sourceUrl: window.location.origin, // Tự động lấy link web đang chạy (hoangdang.online hoặc hoangdangrung.online)
     };
 
     try {

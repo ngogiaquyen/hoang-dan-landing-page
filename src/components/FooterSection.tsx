@@ -47,10 +47,10 @@ export default function FooterSection({ onSelectPackage }: FooterSectionProps) {
           <h4 className="text-white font-bold mb-6 tracking-widest uppercase text-xs">Liên Hệ</h4>
           <ul className="space-y-4">
             <li className="flex items-center gap-2 hover:text-white transition-colors">
-              Hotline: <a href="tel:09xxxxxxxxx" className="font-semibold text-white">09xx xxx xxx</a>
+              Hotline: <a href={`tel:${import.meta.env.VITE_CONTACT_PHONE}`} className="font-semibold text-white">{import.meta.env.VITE_CONTACT_PHONE}</a>
             </li>
             <li className="flex items-center gap-2 hover:text-white transition-colors">
-              Email: <a href="mailto:contact@hoangdangrung.com">contact@hoangdangrung.com</a>
+              Email: <a href={`mailto:${import.meta.env.VITE_CONTACT_EMAIL}`}>{import.meta.env.VITE_CONTACT_EMAIL}</a>
             </li>
           </ul>
         </div>
