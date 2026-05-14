@@ -14,7 +14,7 @@ const packages = [
     price: "150k",
     quantity: "15 Gói Thảo Dược",
     features: ["Miễn phí vận chuyển", "HDSD chi tiết đính kèm"],
-    image: "/images/pkg-1.png",
+    image: "/images/package-1.png",
     borderColor: "border-[#e9f5db]",
     gradient: "from-white to-green-50",
     titleColor: "text-[#606c38]",
@@ -29,7 +29,7 @@ const packages = [
     price: "280k",
     quantity: "30 Gói Thảo Dược",
     features: ["Miễn phí vận chuyển", "Tiết kiệm 20.000đ", "Tặng kèm túi lọc"],
-    image: "/images/pkg-2.png",
+    image: "/images/package-2.png",
     popular: true,
     borderColor: "border-[#bc6c25]",
     gradient: "from-white to-orange-50",
@@ -45,7 +45,7 @@ const packages = [
     price: "400k",
     quantity: "60 Gói Thảo Dược",
     features: ["Miễn phí vận chuyển tận nhà", "Tư vấn 1:1 định kỳ"],
-    image: "/images/pkg-3.png",
+    image: "/images/package-3.png",
     promo: "🔥 Mua 3 Tặng 1",
     borderColor: "border-[#1a4331]",
     gradient: "bg-[#1a4331]",
@@ -61,7 +61,7 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
   return (
     <section className="py-8 max-w-[480px] mx-auto px-4 relative z-10">
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-serif font-bold text-[#1a3a2a] mb-3 uppercase tracking-tight leading-tight">
+        <h2 className="text-4xl font-outfit font-bold text-[#1a3a2a] mb-3 uppercase tracking-tight leading-tight">
           Các Liệu Trình Khuyên Dùng
         </h2>
         <div className="w-16 h-1 bg-[#bc6c25] mx-auto mb-4"></div>

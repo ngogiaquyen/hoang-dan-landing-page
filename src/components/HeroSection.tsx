@@ -28,7 +28,7 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
                 <ShieldCheck className="w-4 h-4" />
                 <span>100% Từ Thiên Nhiên Đại Ngàn</span>
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white drop-shadow-lg">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black font-outfit leading-tight tracking-tight text-white drop-shadow-lg">
                 TINH HOA THẢO DƯỢC <br />
                 <span className="text-[#fefae0]">QUÝ HIẾM</span>
               </h1>

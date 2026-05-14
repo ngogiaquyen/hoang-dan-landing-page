@@ -23,7 +23,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f1f1f1] flex justify-center">
+    <div className="min-h-screen bg-[#f1f1f1] flex justify-center font-sans">
       <div className="w-full max-w-[480px] bg-[#fdfcf0] text-[#1a4331] font-sans selection:bg-[#bc6c25]/30 relative overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.1)]">
         <BackgroundDecor />
         <NavbarSection onOrderClick={scrollToOrder} />
