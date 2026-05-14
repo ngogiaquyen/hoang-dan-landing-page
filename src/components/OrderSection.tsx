@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { motion } from 'motion/react';
-import { ArrowRight, ShieldCheck, CheckCircle2, Loader2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowRight, ShieldCheck, CheckCircle2, Loader2, X, AlertCircle } from 'lucide-react';
 
 type OrderSectionProps = {
   selectedPackage: number | null;
@@ -14,8 +14,8 @@ const packages = [
 ];
 
 export default function OrderSection({ selectedPackage, setSelectedPackage }: OrderSectionProps) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -30,71 +30,49 @@ export default function OrderSection({ selectedPackage, setSelectedPackage }: Or
       return;
     }
 
-    setIsSubmitting(true);
+    setStatus('submitting');
+    setErrorMessage('');
 
     const scriptURL = import.meta.env.VITE_GOOGLE_SHEET_URL || '';
 
     const data = {
       ...formData,
       package: packages.find(p => p.id === selectedPackage)?.name,
-      timestamp: new Date().toLocaleString('vi-VN'),
     };
 
     try {
-      // Sử dụng fetch với mode no-cors nếu Apps Script không hỗ trợ CORS đầy đủ
-      // Hoặc sử dụng định dạng form-data truyền thống
       const formDataToSend = new FormData();
       Object.entries(data).forEach(([key, value]) => {
         formDataToSend.append(key, value as string);
       });
 
+      // Gửi dữ liệu bằng no-cors để tránh lỗi chặn đứng request
       await fetch(scriptURL, {
         method: 'POST',
         body: formDataToSend,
-        mode: 'no-cors', // Thêm dòng này để tránh lỗi CORS của Google
+        mode: 'no-cors',
       });
 
-      setIsSuccess(true);
-      setFormData({ name: '', phone: '', address: '', note: '' });
-      setSelectedPackage(0);
+      // Giả lập trễ 1s để người dùng thấy trạng thái đang xử lý cho mượt
+      setTimeout(() => {
+        setStatus('success');
+        setFormData({ name: '', phone: '', address: '', note: '' });
+        setSelectedPackage(0);
+      }, 1000);
+
     } catch (error) {
       console.error('Error!', error);
-      // alert('Có lỗi xảy ra, vui lòng thử lại sau hoặc liên hệ hotline!');
-      // Vì fetch POST tới Apps Script thường bị chặn CORS nhưng vẫn lưu được dữ liệu, 
-      // nên chúng ta vẫn coi là thành công trong bản demo này hoặc hướng dẫn khách hàng kĩ hơn.
-      setIsSuccess(true);
-    } finally {
-      setIsSubmitting(false);
+      setStatus('error');
+      setErrorMessage('Không thể kết nối với máy chủ. Vui lòng thử lại sau hoặc gọi Hotline.');
     }
   };
 
-  if (isSuccess) {
-    return (
-      <section id="order-section" className="bg-[#283618] py-20 px-4 relative overflow-hidden text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="max-w-xl mx-auto bg-[#fefae0] rounded-[2.5rem] p-12 shadow-2xl relative z-10"
-        >
-          <CheckCircle2 className="w-20 h-20 text-[#bc6c25] mx-auto mb-6" />
-          <h2 className="text-3xl font-black text-[#283618] mb-4">Đặt Hàng Thành Công!</h2>
-          <p className="text-[#606c38] font-medium text-lg mb-8">
-            Cảm ơn bạn đã tin tưởng Hoàng Đằng Rừng. <br /> Chúng tôi sẽ liên hệ lại qua số điện thoại để xác nhận đơn hàng trong giây lát.
-          </p>
-          <button
-            onClick={() => setIsSuccess(false)}
-            className="bg-[#bc6c25] text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-[#a05a1d] transition-all"
-          >
-            Quay lại
-          </button>
-        </motion.div>
-      </section>
-    );
-  }
+  const closeModal = () => setStatus('idle');
 
   return (
     <section id="order-section" className="bg-[#283618] py-12 px-0 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_white_1px,_transparent_1px)] [background-size:20px_20px]"></div>
+      
       <div className="max-w-4xl mx-auto relative z-10 px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -186,14 +164,9 @@ export default function OrderSection({ selectedPackage, setSelectedPackage }: Or
 
             <button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-[#bc6c25] hover:bg-[#a05a1d] text-white px-5 py-5 rounded-2xl font-black text-lg tracking-wider uppercase shadow-lg transition-all hover:shadow-xl mt-4 flex justify-center items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[#bc6c25] hover:bg-[#a05a1d] text-white px-5 py-5 rounded-2xl font-black text-lg tracking-wider uppercase shadow-lg transition-all hover:shadow-xl mt-4 flex justify-center items-center gap-2"
             >
-              {isSubmitting ? (
-                <>Đang xử lý... <Loader2 className="w-5 h-5 animate-spin" /></>
-              ) : (
-                <>Xác Nhận Đặt Hàng <ArrowRight className="w-5 h-5" /></>
-              )}
+              Xác Nhận Đặt Hàng <ArrowRight className="w-5 h-5" />
             </button>
             <p className="text-center text-sm font-semibold text-[#606c38] mt-4 flex items-center justify-center">
               <ShieldCheck className="w-5 h-5 mr-2 text-[#bc6c25]" />
@@ -202,7 +175,79 @@ export default function OrderSection({ selectedPackage, setSelectedPackage }: Or
           </form>
         </motion.div>
       </div>
+
+      {/* Shared Modal Overlay */}
+      <AnimatePresence>
+        {status !== 'idle' && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={status !== 'submitting' ? closeModal : undefined}
+            />
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative z-10 max-w-sm w-full text-center"
+            >
+              {status === 'submitting' && (
+                <div className="py-4">
+                  <Loader2 className="w-16 h-16 text-[#bc6c25] mx-auto animate-spin mb-6" />
+                  <h3 className="text-2xl font-black text-[#283618] mb-2 font-outfit uppercase">Đang Xử Lý</h3>
+                  <p className="text-[#606c38] font-medium">Chúng tôi đang lưu thông tin đơn hàng...</p>
+                </div>
+              )}
+
+              {status === 'success' && (
+                <div className="py-4">
+                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="w-12 h-12 text-[#283618]" />
+                  </div>
+                  <h3 className="text-2xl font-black text-[#283618] mb-2 font-outfit uppercase">Thành Công!</h3>
+                  <p className="text-[#606c38] font-medium mb-8">
+                    Đơn hàng đã được gửi đi. Hoàng Đằng Rừng sẽ liên hệ lại sớm nhất!
+                  </p>
+                  <button
+                    onClick={closeModal}
+                    className="w-full bg-[#bc6c25] text-white py-4 rounded-2xl font-bold shadow-lg hover:bg-[#a05a1d] transition-all"
+                  >
+                    Xong
+                  </button>
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="py-4">
+                  <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <AlertCircle className="w-12 h-12 text-red-600" />
+                  </div>
+                  <h3 className="text-2xl font-black text-red-600 mb-2 font-outfit uppercase">Thất Bại</h3>
+                  <p className="text-[#606c38] font-medium mb-8">{errorMessage}</p>
+                  <button
+                    onClick={closeModal}
+                    className="w-full bg-red-600 text-white py-4 rounded-2xl font-bold shadow-lg transition-all"
+                  >
+                    Quay lại
+                  </button>
+                </div>
+              )}
+
+              {status !== 'submitting' && (
+                <button 
+                  onClick={closeModal}
+                  className="absolute top-4 right-4 text-[#606c38] hover:text-[#283618] transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              )}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
-
