@@ -5,25 +5,25 @@ const steps = [
     id: 1,
     title: "Thu Hái Tự Nhiên",
     description: "Khai thác rễ Hoàng Đằng già tại vùng rừng sâu, chỉ chọn rễ có màu vàng tươi đậm.",
-    image: "/images/buoc-1.png",
+    image: "/images/process-1.webp",
   },
   {
     id: 2,
     title: "Sơ Chế & Thái Lát",
     description: "Rửa sạch, loại bỏ tạp chất và thái rễ thành các phiến tròn đều, đẹp mắt.",
-    image: "/images/buoc-2.png",
+    image: "/images/process-2.webp",
   },
   {
     id: 3,
     title: "Phơi Khô Tự Nhiên",
     description: "Phơi khô rễ đã thái trên mẹt tre dưới ánh nắng và gió tự nhiên để bảo quản.",
-    image: "/images/buoc-3.png",
+    image: "/images/process-3.webp",
   },
   {
     id: 4,
     title: "Đóng Gói Thành Phẩm",
     description: "Lựa chọn phiến khô đều màu, đóng gói trong bao bì cao cấp, sang trọng, có tem nhãn.",
-    image: "/images/buoc-4.png",
+    image: "/images/process-4.webp",
   },
 ];
 

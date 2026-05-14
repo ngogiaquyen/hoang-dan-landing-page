@@ -12,7 +12,7 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
     <section className="mt-20 relative z-10">
       <div className="relative w-full max-w-[1920px] mx-auto overflow-hidden">
         <img
-          src="/images/hero-banner.png"
+          src="/images/hero-banner.webp"
           alt="Hoàng Đằng Rừng Banner"
           className="w-full h-auto object-cover min-h-[300px] md:min-h-0"
         />
