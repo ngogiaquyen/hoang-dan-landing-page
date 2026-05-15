@@ -52,6 +52,9 @@ export default function FooterSection({ onSelectPackage }: FooterSectionProps) {
               Hotline: <a href={`tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE}`} className="font-semibold text-white">{process.env.NEXT_PUBLIC_CONTACT_PHONE}</a>
             </li>
             <li className="flex items-center gap-2 hover:text-white transition-colors">
+              Zalo: <a href={`https://zalo.me/${process.env.NEXT_PUBLIC_CONTACT_PHONE?.replace(/\D/g, '')}`} className="font-semibold text-white" target="_blank" rel="noopener noreferrer">{process.env.NEXT_PUBLIC_CONTACT_PHONE}</a>
+            </li>
+            <li className="flex items-center gap-2 hover:text-white transition-colors">
               Email: <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}>{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</a>
             </li>
           </ul>
