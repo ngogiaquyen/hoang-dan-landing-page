@@ -15,11 +15,15 @@
       "destination": "/robots.txt"
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [
-        { "type": "header", "key": "user-agent", "value": ".*(facebookexternalhit|Meta-ExternalAgent|Meta-ExternalFetcher).*" }
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Meta-ExternalAgent|Meta-ExternalFetcher|Zalo-OpenGraph-Web-Scraper).*"
+        }
       ],
-      "destination": "/"
+      "destination": "/:path*"
     }
   ]
 }

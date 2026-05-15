@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Hoàng Đằng Rừng tự nhiên, sạch sẽ, an toàn. Quy trình chế biến thủ công giữ trọn dược tính quý giá. Hỗ trợ tiêu hóa, tăng cường sức khỏe.",
     images: [
       {
-        url: "https://hoangdangrung.online/images/banner.webp",
+        url: "/images/banner.webp",
         width: 1200,
         height: 630,
         alt: "Hoàng Đằng Rừng",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hoàng Đằng Rừng - Tinh Hoa Thảo Dược Quý Hiếm",
     description: "Hoàng Đằng Rừng tự nhiên, sạch sẽ, an toàn. Quy trình chế biến thủ công giữ trọn dược tính quý giá.",
-    images: ["https://hoangdangrung.online/images/banner.webp"],
+    images: ["/images/banner.webp"],
   },
 };
 
