@@ -1,29 +1,32 @@
 {
-  "rewrites": [
-    {
-      "source": "/((?!api/|images/|_next/|_static/|[\\w-]+\\.\\w+).*)",
-      "destination": "/index.html"
-    }
-  ],
   "cleanUrls": true,
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
+        { "key": "X-Robots-Tag", "value": "all" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     },
     {
       "source": "/images/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "header", "key": "user-agent", "value": ".*(facebookexternalhit|Meta-ExternalAgent|Meta-ExternalFetcher).*" }
+      ],
+      "destination": "/index.html"
+    },
+    {
+      "source": "/((?!api/|images/|_next/|_static/|[\\w-]+\\.\\w+).*)",
+      "destination": "/index.html"
     }
   ]
 }
