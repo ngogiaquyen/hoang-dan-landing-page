@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hoangdangrung.online"),
   title: "Hoàng Đằng Rừng - Dược Liệu Quý Từ Thiên Nhiên | Sạch - An Toàn",
   description: "Hoàng Đằng Rừng tự nhiên, sạch sẽ, an toàn. Quy trình chế biến thủ công giữ trọn dược tính quý giá. Hỗ trợ tiêu hóa, tăng cường sức khỏe.",
   keywords: ["hoàng đằng rừng", "dược liệu sạch", "thảo dược thiên nhiên", "trà thảo dược", "hoàng đằng khô"],
   openGraph: {
     type: "website",
-    url: "https://hoangdangrung.online/",
+    url: "/",
     title: "Hoàng Đằng Rừng - Tinh Hoa Thảo Dược Quý Hiếm",
     description: "Hoàng Đằng Rừng tự nhiên, sạch sẽ, an toàn. Quy trình chế biến thủ công giữ trọn dược tính quý giá. Hỗ trợ tiêu hóa, tăng cường sức khỏe.",
     images: [
