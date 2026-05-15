@@ -35,7 +35,7 @@ export default function HeroSection({ onOrderClick }: HeroSectionProps) {
                 <span className="text-[#fefae0]">QUÝ HIẾM</span>
               </h1>
               <p className="text-lg md:text-xl text-white font-medium drop-shadow-md">
-                Giải pháp chăm sóc sức khỏe toàn diện từ núi rừng Tây Nguyên. <br className="hidden md:block" /> An toàn - Lành tính - Hiệu quả vượt trội.
+                Giải pháp chăm sóc sức khỏe toàn diện từ núi rừng Tây Bắc. <br className="hidden md:block" /> An toàn - Lành tính - Hiệu quả vượt trội.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start self-start gap-4 pt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full sm:w-auto items-stretch max-w-sm sm:max-w-none mx-auto lg:mx-0">

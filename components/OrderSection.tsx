@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, ShieldCheck, CheckCircle2, Loader2, X, AlertCircle } from 'lucide-react';
 
@@ -9,11 +9,20 @@ type OrderSectionProps = {
   setSelectedPackage: (packageId: number) => void;
 };
 
-const packages = [
-  { id: 1, name: 'Liệu Trình 1 (15 Gói) - 150.000đ' },
-  { id: 2, name: 'Liệu Trình 2 (30 Gói) - 280.000đ' },
-  { id: 3, name: 'Liệu Trình 3 (60 Gói) - 400.000đ [MUA 3 TẶNG 1] (Khuyên dùng)' },
+const allPackages = [
+  { id: 1, name: `Liệu Trình 1 (15 Gói) - ${process.env.NEXT_PUBLIC_PRICE_PKG_1 || '150.000đ'}` },
+  { id: 2, name: `Liệu Trình 2 (30 Gói) - ${process.env.NEXT_PUBLIC_PRICE_PKG_2 || '280.000đ'}`, isVisible: !!process.env.NEXT_PUBLIC_PRICE_PKG_2 },
+  { id: 3, name: `Liệu Trình 3 (60 Gói) - ${process.env.NEXT_PUBLIC_PRICE_PKG_3 || '400.000đ'} [MUA 3 TẶNG 1] (Khuyên dùng)`, isVisible: !!process.env.NEXT_PUBLIC_PRICE_PKG_3 },
 ];
+
+const rawPackages = allPackages.filter(pkg => pkg.id === 1 || pkg.isVisible);
+
+// Nếu chỉ có 1 gói, rút gọn tên (bỏ chữ Liệu Trình 1)
+const packages = rawPackages.length === 1 
+  ? rawPackages.map(pkg => ({ ...pkg, name: pkg.name.replace(/^Liệu Trình \d+ /, '') }))
+  : rawPackages;
+
+
 
 export default function OrderSection({ selectedPackage, setSelectedPackage }: OrderSectionProps) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -24,6 +33,14 @@ export default function OrderSection({ selectedPackage, setSelectedPackage }: Or
     address: '',
     note: '',
   });
+
+  // Tự động chọn gói nếu chỉ có 1 gói duy nhất
+  useEffect(() => {
+    if (packages.length === 1 && selectedPackage !== packages[0].id) {
+      setSelectedPackage(packages[0].id);
+    }
+  }, [packages.length, selectedPackage, setSelectedPackage]);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -130,7 +147,10 @@ export default function OrderSection({ selectedPackage, setSelectedPackage }: Or
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-[#606c38] uppercase tracking-widest mb-4">Lựa chọn liệu trình *</label>
+              <label className="block text-xs font-bold text-[#606c38] uppercase tracking-widest mb-4">
+                {packages.length > 1 ? "Lựa chọn liệu trình *" : "Gói sản phẩm bạn chọn *"}
+              </label>
+
               <div className="space-y-3">
                 {packages.map((pkg) => (
                   <label

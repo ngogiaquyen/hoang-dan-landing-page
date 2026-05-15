@@ -8,7 +8,7 @@ type PricingSectionProps = {
   onSelectPackage: ScrollToOrder;
 };
 
-const packages = [
+const allPackages = [
   {
     id: 1,
     title: "Liệu Trình 1",
@@ -39,6 +39,7 @@ const packages = [
     priceColor: "text-[#283618]",
     buttonClass: "bg-[#bc6c25] hover:bg-[#a05a1d] text-white",
     checkBg: "bg-[#fefae0]",
+    isVisible: !!process.env.NEXT_PUBLIC_PRICE_PKG_2
   },
   {
     id: 3,
@@ -56,21 +57,28 @@ const packages = [
     buttonClass: "bg-[#dda15e] hover:bg-[#c89255] text-[#283618]",
     checkBg: "bg-white/20",
     isDark: true,
+    isVisible: !!process.env.NEXT_PUBLIC_PRICE_PKG_3
   },
 ];
+
+const packages = allPackages.filter(pkg => pkg.id === 1 || pkg.isVisible);
+
 
 export default function PricingSection({ onSelectPackage }: PricingSectionProps) {
   return (
     <section className="py-8 max-w-[480px] mx-auto px-4 relative z-10">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-outfit font-bold text-[#1a3a2a] mb-3 uppercase tracking-tight leading-tight">
-          Các Liệu Trình Khuyên Dùng
+          {packages.length > 1 ? "Các Liệu Trình Khuyên Dùng" : "Giá Bán Ưu Đãi"}
         </h2>
         <div className="w-16 h-1 bg-[#bc6c25] mx-auto mb-4"></div>
         <p className="text-[#5c6b61] text-[14px] font-medium leading-relaxed">
-          Chọn liệu trình phù hợp với nhu cầu của bạn. Mua càng nhiều, ưu đãi càng lớn.
+          {packages.length > 1 
+            ? "Chọn liệu trình phù hợp với nhu cầu của bạn. Mua càng nhiều, ưu đãi càng lớn."
+            : "Dược liệu sạch từ núi rừng Tây Bắc, giữ trọn vẹn dược tính quý giá."}
         </p>
       </div>
+
 
       <div className="space-y-8">
         {packages.map((pkg, index) => (
@@ -99,12 +107,15 @@ export default function PricingSection({ onSelectPackage }: PricingSectionProps)
             </div>
 
             <div className="p-6 flex flex-col flex-1">
-              <div className="mb-4">
-                <h3 className={`text-lg font-bold uppercase ${pkg.titleColor}`}>{pkg.title}</h3>
-                <p className={`text-[10px] font-bold tracking-widest mt-0.5 opacity-70 ${pkg.isDark ? 'text-[#dda15e]' : 'text-[#bc6c25]'}`}>
-                  {pkg.subtitle}
-                </p>
-              </div>
+              {packages.length > 1 && (
+                <div className="mb-4">
+                  <h3 className={`text-lg font-bold uppercase ${pkg.titleColor}`}>{pkg.title}</h3>
+                  <p className={`text-[10px] font-bold tracking-widest mt-0.5 opacity-70 ${pkg.isDark ? 'text-[#dda15e]' : 'text-[#bc6c25]'}`}>
+                    {pkg.subtitle}
+                  </p>
+                </div>
+              )}
+
 
               <div className="mb-5">
                 <div className="flex items-baseline gap-1">

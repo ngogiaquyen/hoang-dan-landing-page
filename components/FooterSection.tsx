@@ -33,16 +33,21 @@ export default function FooterSection({ onSelectPackage }: FooterSectionProps) {
                 Liệu Trình 15 Gói
               </button>
             </li>
-            <li>
-              <button onClick={() => onSelectPackage(2)} className="hover:text-white transition-colors cursor-pointer text-left">
-                Liệu Trình 30 Gói
-              </button>
-            </li>
-            <li>
-              <button onClick={() => onSelectPackage(3)} className="hover:text-white transition-colors cursor-pointer text-left">
-                Liệu Trình 60 Gói
-              </button>
-            </li>
+            {process.env.NEXT_PUBLIC_PRICE_PKG_2 && (
+              <li>
+                <button onClick={() => onSelectPackage(2)} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Liệu Trình 30 Gói
+                </button>
+              </li>
+            )}
+            {process.env.NEXT_PUBLIC_PRICE_PKG_3 && (
+              <li>
+                <button onClick={() => onSelectPackage(3)} className="hover:text-white transition-colors cursor-pointer text-left">
+                  Liệu Trình 60 Gói
+                </button>
+              </li>
+            )}
+
           </ul>
         </div>
         <div>
