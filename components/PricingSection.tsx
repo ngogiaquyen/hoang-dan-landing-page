@@ -61,12 +61,28 @@ const allPackages = [
   },
 ];
 
-const packages = allPackages.filter(pkg => pkg.id === 1 || pkg.isVisible);
+const rawPackages = allPackages.filter(pkg => pkg.id === 1 || pkg.isVisible);
+
+// Nếu chỉ có 1 gói, áp dụng style của gói 3 (Dark Mode) để trông cao cấp hơn
+const packages = rawPackages.length === 1 
+  ? rawPackages.map(pkg => ({
+      ...pkg,
+      borderColor: "border-[#1a4331]",
+      gradient: "bg-[#1a4331]",
+      titleColor: "text-green-200",
+      priceColor: "text-white",
+      buttonClass: "bg-[#dda15e] hover:bg-[#c89255] text-[#283618]",
+      checkBg: "bg-white/20",
+      isDark: true,
+    }))
+  : rawPackages;
+
 
 
 export default function PricingSection({ onSelectPackage }: PricingSectionProps) {
   return (
-    <section className="py-8 max-w-[480px] mx-auto px-4 relative z-10">
+    <section id="pricing-section" className="py-8 max-w-[480px] mx-auto px-4 relative z-10">
+
       <div className="text-center mb-8">
         <h2 className="text-4xl font-outfit font-bold text-[#1a3a2a] mb-3 uppercase tracking-tight leading-tight">
           {packages.length > 1 ? "Các Liệu Trình Khuyên Dùng" : "Giá Bán Ưu Đãi"}

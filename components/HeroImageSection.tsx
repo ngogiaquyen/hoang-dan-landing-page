@@ -21,8 +21,11 @@ export default function HeroImageSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-amber-900/20 to-transparent"></div>
           </div>
-          <div className="absolute -bottom-6 -left-5 bg-white p-3 rounded-2xl shadow-xl flex items-center gap-3 border border-[#e9f5db]">
-            <div className="w-12 h-12 bg-[#fefae0] rounded-full flex items-center justify-center text-[#bc6c25]">
+          <div 
+            onClick={() => document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' })}
+            className="absolute -bottom-6 -left-5 bg-white p-3 rounded-2xl shadow-xl flex items-center gap-3 border border-[#e9f5db] cursor-pointer hover:scale-105 transition-transform active:scale-95 group z-20"
+          >
+            <div className="w-12 h-12 bg-[#fefae0] rounded-full flex items-center justify-center text-[#bc6c25] group-hover:bg-[#bc6c25] group-hover:text-white transition-colors">
               <PackageOpen className="w-6 h-6" />
             </div>
             <div>
@@ -30,6 +33,7 @@ export default function HeroImageSection() {
               <p className="text-sm text-[#606c38] font-medium">Miễn phí vận chuyển toàn quốc</p>
             </div>
           </div>
+
         </motion.div>
       </div>
     </section>

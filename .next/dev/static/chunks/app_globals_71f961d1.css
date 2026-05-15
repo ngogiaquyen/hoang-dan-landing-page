@@ -1708,6 +1708,18 @@
     transition-duration: .7s;
   }
 
+  @media (hover: hover) {
+    .group-hover\:bg-\[\#bc6c25\]:is(:where(.group):hover *) {
+      background-color: #bc6c25;
+    }
+  }
+
+  @media (hover: hover) {
+    .group-hover\:text-white:is(:where(.group):hover *) {
+      color: var(--color-white);
+    }
+  }
+
   .selection\:bg-\[\#bc6c25\]\/30 ::selection {
     background-color: #bc6c254d;
     background-color: lab(54.0816% 28.8994 51.2316 / .3);

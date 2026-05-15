@@ -296,20 +296,23 @@ function HeroImageSection() {
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute -bottom-6 -left-5 bg-white p-3 rounded-2xl shadow-xl flex items-center gap-3 border border-[#e9f5db]",
+                        onClick: ()=>document.getElementById('pricing-section')?.scrollIntoView({
+                                behavior: 'smooth'
+                            }),
+                        className: "absolute -bottom-6 -left-5 bg-white p-3 rounded-2xl shadow-xl flex items-center gap-3 border border-[#e9f5db] cursor-pointer hover:scale-105 transition-transform active:scale-95 group z-20",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-12 h-12 bg-[#fefae0] rounded-full flex items-center justify-center text-[#bc6c25]",
+                                className: "w-12 h-12 bg-[#fefae0] rounded-full flex items-center justify-center text-[#bc6c25] group-hover:bg-[#bc6c25] group-hover:text-white transition-colors",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$package$2d$open$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PackageOpen$3e$__["PackageOpen"], {
                                     className: "w-6 h-6"
                                 }, void 0, false, {
                                     fileName: "[project]/components/HeroImageSection.tsx",
-                                    lineNumber: 26,
+                                    lineNumber: 29,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/HeroImageSection.tsx",
-                                lineNumber: 25,
+                                lineNumber: 28,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -319,7 +322,7 @@ function HeroImageSection() {
                                         children: "Sẵn sàng giao ngay"
                                     }, void 0, false, {
                                         fileName: "[project]/components/HeroImageSection.tsx",
-                                        lineNumber: 29,
+                                        lineNumber: 32,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -327,13 +330,13 @@ function HeroImageSection() {
                                         children: "Miễn phí vận chuyển toàn quốc"
                                     }, void 0, false, {
                                         fileName: "[project]/components/HeroImageSection.tsx",
-                                        lineNumber: 30,
+                                        lineNumber: 33,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/HeroImageSection.tsx",
-                                lineNumber: 28,
+                                lineNumber: 31,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -474,13 +477,13 @@ const allPackages = [
     },
     {
         id: 2,
-        name: `Liệu Trình 2 (30 Gói) - ${("TURBOPACK compile-time value", "280k") || '280.000đ'}`,
-        isVisible: !!("TURBOPACK compile-time value", "280k")
+        name: `Liệu Trình 2 (30 Gói) - ${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_PRICE_PKG_2 || '280.000đ'}`,
+        isVisible: !!__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_PRICE_PKG_2
     },
     {
         id: 3,
-        name: `Liệu Trình 3 (60 Gói) - ${("TURBOPACK compile-time value", "400k") || '400.000đ'} [MUA 3 TẶNG 1] (Khuyên dùng)`,
-        isVisible: !!("TURBOPACK compile-time value", "400k")
+        name: `Liệu Trình 3 (60 Gói) - ${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_PRICE_PKG_3 || '400.000đ'} [MUA 3 TẶNG 1] (Khuyên dùng)`,
+        isVisible: !!__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_PRICE_PKG_3
     }
 ];
 const rawPackages = allPackages.filter((pkg)=>pkg.id === 1 || pkg.isVisible);
@@ -1110,7 +1113,7 @@ const allPackages = [
         id: 2,
         title: "Liệu Trình 2",
         subtitle: "CHĂM SÓC CHUYÊN SÂU",
-        price: ("TURBOPACK compile-time value", "280k") || "280k",
+        price: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_PRICE_PKG_2 || "280k",
         quantity: "30 Gói Thảo Dược",
         features: [
             "Miễn phí vận chuyển",
@@ -1125,13 +1128,13 @@ const allPackages = [
         priceColor: "text-[#283618]",
         buttonClass: "bg-[#bc6c25] hover:bg-[#a05a1d] text-white",
         checkBg: "bg-[#fefae0]",
-        isVisible: !!("TURBOPACK compile-time value", "280k")
+        isVisible: !!__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_PRICE_PKG_2
     },
     {
         id: 3,
         title: "Liệu Trình 3",
         subtitle: "TIẾT KIỆM TỐI ĐA",
-        price: ("TURBOPACK compile-time value", "400k") || "400k",
+        price: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_PRICE_PKG_3 || "400k",
         quantity: "60 Gói Thảo Dược",
         features: [
             "Miễn phí vận chuyển tận nhà",
@@ -1146,12 +1149,24 @@ const allPackages = [
         buttonClass: "bg-[#dda15e] hover:bg-[#c89255] text-[#283618]",
         checkBg: "bg-white/20",
         isDark: true,
-        isVisible: !!("TURBOPACK compile-time value", "400k")
+        isVisible: !!__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_PRICE_PKG_3
     }
 ];
-const packages = allPackages.filter((pkg)=>pkg.id === 1 || pkg.isVisible);
+const rawPackages = allPackages.filter((pkg)=>pkg.id === 1 || pkg.isVisible);
+// Nếu chỉ có 1 gói, áp dụng style của gói 3 (Dark Mode) để trông cao cấp hơn
+const packages = rawPackages.length === 1 ? rawPackages.map((pkg)=>({
+        ...pkg,
+        borderColor: "border-[#1a4331]",
+        gradient: "bg-[#1a4331]",
+        titleColor: "text-green-200",
+        priceColor: "text-white",
+        buttonClass: "bg-[#dda15e] hover:bg-[#c89255] text-[#283618]",
+        checkBg: "bg-white/20",
+        isDark: true
+    })) : rawPackages;
 function PricingSection({ onSelectPackage }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        id: "pricing-section",
         className: "py-8 max-w-[480px] mx-auto px-4 relative z-10",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1162,14 +1177,14 @@ function PricingSection({ onSelectPackage }) {
                         children: packages.length > 1 ? "Các Liệu Trình Khuyên Dùng" : "Giá Bán Ưu Đãi"
                     }, void 0, false, {
                         fileName: "[project]/components/PricingSection.tsx",
-                        lineNumber: 71,
+                        lineNumber: 87,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "w-16 h-1 bg-[#bc6c25] mx-auto mb-4"
                     }, void 0, false, {
                         fileName: "[project]/components/PricingSection.tsx",
-                        lineNumber: 74,
+                        lineNumber: 90,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1177,13 +1192,13 @@ function PricingSection({ onSelectPackage }) {
                         children: packages.length > 1 ? "Chọn liệu trình phù hợp với nhu cầu của bạn. Mua càng nhiều, ưu đãi càng lớn." : "Dược liệu sạch từ núi rừng Tây Bắc, giữ trọn vẹn dược tính quý giá."
                     }, void 0, false, {
                         fileName: "[project]/components/PricingSection.tsx",
-                        lineNumber: 75,
+                        lineNumber: 91,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PricingSection.tsx",
-                lineNumber: 70,
+                lineNumber: 86,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1210,7 +1225,7 @@ function PricingSection({ onSelectPackage }) {
                                 children: "Phổ Biến Nhất"
                             }, void 0, false, {
                                 fileName: "[project]/components/PricingSection.tsx",
-                                lineNumber: 94,
+                                lineNumber: 110,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1222,20 +1237,20 @@ function PricingSection({ onSelectPackage }) {
                                         className: "w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PricingSection.tsx",
-                                        lineNumber: 101,
+                                        lineNumber: 117,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PricingSection.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 122,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/PricingSection.tsx",
-                                lineNumber: 100,
+                                lineNumber: 116,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1249,7 +1264,7 @@ function PricingSection({ onSelectPackage }) {
                                                 children: pkg.title
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PricingSection.tsx",
-                                                lineNumber: 112,
+                                                lineNumber: 128,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1257,13 +1272,13 @@ function PricingSection({ onSelectPackage }) {
                                                 children: pkg.subtitle
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PricingSection.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 129,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PricingSection.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 127,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1277,7 +1292,7 @@ function PricingSection({ onSelectPackage }) {
                                                         children: pkg.price
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/PricingSection.tsx",
-                                                        lineNumber: 122,
+                                                        lineNumber: 138,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1285,13 +1300,13 @@ function PricingSection({ onSelectPackage }) {
                                                         children: "/liệu trình"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/PricingSection.tsx",
-                                                        lineNumber: 123,
+                                                        lineNumber: 139,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/PricingSection.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 137,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1299,13 +1314,13 @@ function PricingSection({ onSelectPackage }) {
                                                 children: pkg.quantity
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PricingSection.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 141,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PricingSection.tsx",
-                                        lineNumber: 120,
+                                        lineNumber: 136,
                                         columnNumber: 15
                                     }, this),
                                     pkg.promo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1315,12 +1330,12 @@ function PricingSection({ onSelectPackage }) {
                                             children: pkg.promo
                                         }, void 0, false, {
                                             fileName: "[project]/components/PricingSection.tsx",
-                                            lineNumber: 130,
+                                            lineNumber: 146,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/PricingSection.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 145,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1333,25 +1348,25 @@ function PricingSection({ onSelectPackage }) {
                                                         children: "✓"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/PricingSection.tsx",
-                                                        lineNumber: 137,
+                                                        lineNumber: 153,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         children: feature
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/PricingSection.tsx",
-                                                        lineNumber: 140,
+                                                        lineNumber: 156,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, i, true, {
                                                 fileName: "[project]/components/PricingSection.tsx",
-                                                lineNumber: 136,
+                                                lineNumber: 152,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/PricingSection.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 150,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1360,30 +1375,30 @@ function PricingSection({ onSelectPackage }) {
                                         children: pkg.popular ? 'Ưu Đãi Đặc Biệt' : 'Chọn Mua Ngay'
                                     }, void 0, false, {
                                         fileName: "[project]/components/PricingSection.tsx",
-                                        lineNumber: 145,
+                                        lineNumber: 161,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/PricingSection.tsx",
-                                lineNumber: 109,
+                                lineNumber: 125,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, pkg.id, true, {
                         fileName: "[project]/components/PricingSection.tsx",
-                        lineNumber: 85,
+                        lineNumber: 101,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/PricingSection.tsx",
-                lineNumber: 83,
+                lineNumber: 99,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/PricingSection.tsx",
-        lineNumber: 69,
+        lineNumber: 84,
         columnNumber: 5
     }, this);
 }
@@ -1716,7 +1731,7 @@ function FooterSection({ onSelectPackage }) {
                                         lineNumber: 31,
                                         columnNumber: 13
                                     }, this),
-                                    ("TURBOPACK compile-time value", "280k") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_PRICE_PKG_2 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: ()=>onSelectPackage(2),
                                             className: "hover:text-white transition-colors cursor-pointer text-left",
@@ -1731,7 +1746,7 @@ function FooterSection({ onSelectPackage }) {
                                         lineNumber: 37,
                                         columnNumber: 15
                                     }, this),
-                                    ("TURBOPACK compile-time value", "400k") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_PRICE_PKG_3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             onClick: ()=>onSelectPackage(3),
                                             className: "hover:text-white transition-colors cursor-pointer text-left",
