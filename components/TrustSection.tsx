@@ -4,7 +4,7 @@ type TrustSectionProps = {
 };
 
 export default function TrustSection({
-  src = '/images/trust.png',
+  src = '/images/trust.webp',
   alt = 'Hoàng Đằng Rừng',
 }: TrustSectionProps) {
   return (
