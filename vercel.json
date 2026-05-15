@@ -4,8 +4,22 @@
       "source": "/(.*)",
       "headers": [
         { "key": "X-Robots-Tag", "value": "all" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/robots.txt",
+      "destination": "/robots.txt"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "header", "key": "user-agent", "value": ".*(facebookexternalhit|Meta-ExternalAgent|Meta-ExternalFetcher).*" }
+      ],
+      "destination": "/"
     }
   ]
 }
